@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+$router->get('auth/login', 'Auth\AuthController@getLogin')->name('login.get');
+$router->post('auth/login', 'Auth\AuthController@postLogin')->name('login.post');
+
 $router->group(['prefix' => 'blog'], function () use ($router) {
     $router->get('/', 'BlogController@index')->name('blog.index');
     $router->get('post/{slug}', 'BlogController@post')->name('blog.post');
@@ -24,4 +27,5 @@ $router->group(['prefix' => 'blog'], function () use ($router) {
 
 $router->group(['prefix' => 'admin', 'middleware' => 'auth'], function () use ($router) {
     $router->get('/', 'AdminController@index')->name('admin.index');
+    $router->resource('posts', 'PostController');
 });

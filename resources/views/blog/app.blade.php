@@ -88,7 +88,7 @@
         </div>
     </header>
 
-    @yield('contact')
+    @yield('content')
 
     <hr>
 

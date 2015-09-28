@@ -12,12 +12,13 @@
                             <?php echo e($post->title); ?>
 
                         </h2>
+                    </a>
                         <h3 class="post-subtitle">
-                            <?php echo e(Illuminate\Support\Str::limit($post->content, 50)); ?>
+                            <?php echo Illuminate\Support\Str::limit(Markdown::parse($post->content), 20); ?>
 
                         </h3>
                     </a>
-                    <p class="post-meta"><a href="<?php echo e(route('user.show', [$post->user->slug])); ?>"><?php echo e($post->user->name); ?></a> em <?php echo e($post->created_at->format('d/m/Y')); ?></p>
+                    <p class="post-meta"><?php echo e($post->user->name); ?> em <?php echo e($post->created_at->format('d/m/Y')); ?></p>
                 </div>
             <?php endforeach; ?>
                 <hr>

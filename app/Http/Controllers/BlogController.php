@@ -14,9 +14,10 @@ class BlogController extends Controller
         return view('blog.index', compact('last_post', 'posts'));
     }
 
-    public function post()
+    public function post($slug)
     {
-
+        $post = Post::where('slug', $slug);
+        return view('blog.post', compact('post'));
     }
 
     public function about()

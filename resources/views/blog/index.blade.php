@@ -13,11 +13,12 @@
                         <h2 class="post-title">
                             {{ $post->title }}
                         </h2>
+                    </a>
                         <h3 class="post-subtitle">
-                            {{ Illuminate\Support\Str::limit($post->content, 50) }}
+                            {!! Illuminate\Support\Str::limit(Markdown::parse($post->content), 20) !!}
                         </h3>
                     </a>
-                    <p class="post-meta"><a href="{{ route('user.show', [$post->user->slug]) }}">{{ $post->user->name }}</a> em {{ $post->created_at->format('d/m/Y') }}</p>
+                    <p class="post-meta">{{ $post->user->name }} em {{ $post->created_at->format('d/m/Y') }}</p>
                 </div>
             @endforeach
                 <hr>

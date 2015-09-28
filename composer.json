@@ -11,7 +11,8 @@
         "mews/purifier": "dev-master",
         "heyupdate/emoji": "dev-master",
         "alfredo-ramos/parsedown-extra-laravel": "~0.3@dev",
-        "cviebrock/eloquent-sluggable": "^3.0"
+        "cviebrock/eloquent-sluggable": "^3.0",
+        "roumen/disqus": "^1.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

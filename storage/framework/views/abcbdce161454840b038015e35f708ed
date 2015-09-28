@@ -17,7 +17,7 @@
     <!-- search form (Optional) -->
     <form action="" method="get" class="sidebar-form">
       <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Procurar usuário">
+        <input type="text" name="q" class="form-control" placeholder="Procurar post">
         <span class="input-group-btn">
           <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
         </span>
@@ -34,7 +34,7 @@
         <a href="#"><i class="fa fa-link"></i> <span>Posts</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li><a href="<?php echo route('admin.posts.index'); ?>">Todos os posts</a></li>
-          <li><a href="<?php echo route('admin.posts.create'); ?>">Adicionar marcação</a></li>
+          <li><a href="<?php echo route('admin.posts.create'); ?>">Adicionar post</a></li>
         </ul>
       </li>
     </ul><!-- /.sidebar-menu -->

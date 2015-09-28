@@ -25,6 +25,7 @@
                       <th>Autor</th>
                       <th>Data</th>
                       <th>Slug</th>
+                      <th></th>
                     </tr>
                     @foreach($posts as $p)
 
@@ -34,6 +35,7 @@
                       <td>{{ $p->user->name }}</td>
                       <td>{{ $p->created_at->format('d/m/Y') }}</td>
                       <td>{{ $p->slug }}</td>
+                      <td><a href="{!! route('admin.posts.destroy', [$p->id]) !!}" style="color:red"><b>DELETAR</b></a></td>
                     </tr>
                     @endforeach
                   </tbody></table>

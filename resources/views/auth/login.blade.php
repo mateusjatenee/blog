@@ -27,7 +27,7 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="/admin"><b>ADRIANA</b>LASER</a>
+        <a href="/admin"><b>SAI</b> DO MEU BLOG</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Faça login para continuar</p>

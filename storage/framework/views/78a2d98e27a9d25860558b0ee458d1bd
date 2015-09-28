@@ -24,6 +24,7 @@
                       <th>Autor</th>
                       <th>Data</th>
                       <th>Slug</th>
+                      <th></th>
                     </tr>
                     <?php foreach($posts as $p): ?>
 
@@ -33,6 +34,7 @@
                       <td><?php echo e($p->user->name); ?></td>
                       <td><?php echo e($p->created_at->format('d/m/Y')); ?></td>
                       <td><?php echo e($p->slug); ?></td>
+                      <td><a href="<?php echo route('admin.posts.destroy', [$p->id]); ?>" style="color:red"><b>DELETAR</b></a></td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody></table>

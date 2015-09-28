@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         AlfredoRamos\ParsedownExtra\ParsedownExtraServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Roumen\Disqus\DisqusServiceProvider::class,
 
         /*
          * Application Service Providers...

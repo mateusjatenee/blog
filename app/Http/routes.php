@@ -21,3 +21,7 @@ $router->group(['prefix' => 'blog'], function () use ($router) {
     $router->get('contact', 'BlogController@contact')->name('blog.contact');
     $router->get('autor/{user}', 'BlogController@author')->name('user.show');
 });
+
+$router->group(['prefix' => 'admin', 'middleware' => 'auth'], function () use ($router) {
+    $router->get('/', 'AdminController@index')->name('admin.index');
+});

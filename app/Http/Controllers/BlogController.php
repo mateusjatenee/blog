@@ -16,7 +16,8 @@ class BlogController extends Controller
 
     public function post($slug)
     {
-        $post = Post::where('slug', $slug);
+        $post = Post::where('slug', $slug)->get();
+        dd($post);
         return view('blog.post', compact('post'));
     }
 

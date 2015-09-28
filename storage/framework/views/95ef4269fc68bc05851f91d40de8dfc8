@@ -24,9 +24,15 @@
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    <?php if($posts->previousPageUrl()): ?>
                     <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
+                        <a href="#">Voltar</a>
                     </li>
+                    <?php endif; ?>
+                    <?php if($posts->hasMorePages()): ?>
+                    <li class="next"><a href="<?php echo $posts->nextPageUrl(); ?>">Próxima página</a></li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
         </div>

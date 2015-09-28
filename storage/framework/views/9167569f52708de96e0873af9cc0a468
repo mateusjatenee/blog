@@ -1,0 +1,20 @@
+    <?php $__env->startSection('title'); ?>
+    <?php echo e($post->title); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <?php echo Markdown::parse($post->content); ?>
+
+                </div>
+            </div>
+        </div>
+    </article>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('blog.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

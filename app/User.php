@@ -19,6 +19,11 @@ SluggableInterface
 {
     use Authenticatable, Authorizable, CanResetPassword, SluggableTrait;
 
+    protected $sluggable = [
+        'build_from' => 'title',
+        'save_to' => 'slug',
+    ];
+
     /**
      * The database table used by the model.
      *

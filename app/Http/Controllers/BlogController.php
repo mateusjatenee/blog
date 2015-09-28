@@ -11,7 +11,6 @@ class BlogController extends Controller
     {
         $last_post = Post::find(1);
         $posts = Post::with('user')->paginate(10);
-        dd($posts);
         return view('blog.index', compact('last_post', 'posts'));
     }
 

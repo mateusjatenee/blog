@@ -7,15 +7,17 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <?php foreach($posts as $post): ?>
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="<?php echo e(route('blog.post', [$post->slug])); ?>">
                         <h2 class="post-title">
-                            Man must explore, and this is exploration at its greatest
+                            <?php echo e($post->title); ?>
+
                         </h2>
                         <h3 class="post-subtitle">
-                            Problems look mighty small from 150 miles up
+                            <?php echo e(Illuminate\Support\Str::limit($post->content, 50)); ?>
+
                         </h3>
                     </a>
-                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                    <p class="post-meta"><a href="<?php echo e(route('user.show', [$post->user->slug])); ?>"><?php echo e($post->user->name); ?></a> em <?php echo e($post->created_at->format('d/m/Y')); ?></p>
                 </div>
             <?php endforeach; ?>
                 <hr>

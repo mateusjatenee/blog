@@ -21,7 +21,7 @@ class BlogController extends Controller
 
     public function about()
     {
-
+        return view('blog.about');
     }
 
     public function contact()

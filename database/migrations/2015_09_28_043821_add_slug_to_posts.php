@@ -14,6 +14,7 @@ class AddSlugToPosts extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->string('slug')->nullable()->unique();
+            $table->string('image_url')->nullable();
         });
     }
 

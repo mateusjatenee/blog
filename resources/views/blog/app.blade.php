@@ -48,14 +48,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a href="{!! route('blog.post', [App\Post::latest()->first()->slug]) !!}">{{ App\Post::latest()->first()->title }}</a>
+                    </li>
+                    <li>
                         <a href="{!! route('blog.index') !!}">Início</a>
                     </li>
                     <li>
                         <a href="{!! route('blog.about') !!}">Sobre</a>
                     </li>
-                    <li>
-                        <a href="{!! route('blog.post', [$last_post->id]) !!}">{{ $last_post->title }}</a>
-                    </li>
+
                     <li>
                         <a href="{!! route('blog.contact') !!}">Contact</a>
                     </li>

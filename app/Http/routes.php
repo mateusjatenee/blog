@@ -19,4 +19,5 @@ $router->group(['prefix' => 'blog'], function () use ($router) {
     $router->get('post/{slug}', 'BlogController@post')->name('blog.post');
     $router->get('about', 'BlogController@about')->name('blog.about');
     $router->get('contact', 'BlogController@contact')->name('blog.contact');
+    $router->get('autor/{user}', 'BlogController@author')->name('user.show');
 });

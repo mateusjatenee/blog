@@ -9,8 +9,10 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $last_post = Post::with('user')->latest()->take(1)->get();
-        return view('blog.index');
+        $last_post = Post::find(1);
+        $posts = Post::with('user')->paginate(10);
+        dd($posts);
+        return view('blog.index', compact('last_post', 'posts'));
     }
 
     public function post()
@@ -24,6 +26,11 @@ class BlogController extends Controller
     }
 
     public function contact()
+    {
+
+    }
+
+    public function author()
     {
 
     }

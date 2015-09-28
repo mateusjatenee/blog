@@ -1,13 +1,11 @@
-@extends('blog.app')
+<?php $__env->startSection('title', 'Início'); ?>
 
-@section('title', 'Início')
-
-@section('contact')
+<?php $__env->startSection('contact'); ?>
 <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            @foreach($posts as $post)
+            <?php foreach($posts as $post): ?>
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
@@ -19,7 +17,7 @@
                     </a>
                     <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
                 </div>
-            @endforeach
+            <?php endforeach; ?>
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
@@ -30,4 +28,6 @@
             </div>
         </div>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('blog.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

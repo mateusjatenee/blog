@@ -1,6 +1,5 @@
-@extends('admin.admin_template')
-@section('title', 'Posts')
-@section('content')
+<?php $__env->startSection('title', 'Posts'); ?>
+<?php $__env->startSection('content'); ?>
 <div class="content">
 
 <div class="row">
@@ -26,18 +25,18 @@
                       <th>Data</th>
                       <th>Slug</th>
                     </tr>
-                    @foreach($posts as $p)
+                    <?php foreach($posts as $p): ?>
 
                     <tr>
-					            <td>{{ $p->id }}</td>
-                      <td><a href="{!! route('admin.posts.show', [$p->id]) !!}">{{ $p->title }}</a></td>
-                      <td>{{ $p->user->name }}</td>
-                      <td>{{ $p->created_at->format('d/m/Y') }}</td>
-                      <td>{{ $p->slug }}</td>
+					            <td><?php echo e($p->id); ?></td>
+                      <td><a href="<?php echo route('admin.posts.show', [$p->id]); ?>"><?php echo e($p->title); ?></a></td>
+                      <td><?php echo e($p->user->name); ?></td>
+                      <td><?php echo e($p->created_at->format('d/m/Y')); ?></td>
+                      <td><?php echo e($p->slug); ?></td>
                     </tr>
-                    @endforeach
+                    <?php endforeach; ?>
                   </tbody></table>
-                <center>  {!! $posts->render() !!} </center>
+                <center>  <?php echo $posts->render(); ?> </center>
 
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -45,4 +44,6 @@
           </div>
 
 </div>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.admin_template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

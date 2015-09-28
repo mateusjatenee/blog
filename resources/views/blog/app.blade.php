@@ -75,7 +75,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <h1>
-                        @if (Route::getCurrentRoute()->getPath() == 'blog' || Route::getCurrentRoute()->getPath() == 'blog/about')
+                        @if (Route::getCurrentRoute()->getPath() == 'blog' || Route::getCurrentRoute()->getPath() == 'blog/about' || Route::getCurrentRoute()->getPath() == 'blog/contact')
                           texto padrão
                         @else
                             {{ $post->title }}

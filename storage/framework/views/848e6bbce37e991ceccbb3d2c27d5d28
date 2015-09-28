@@ -1,0 +1,3 @@
+<?php if(config('parsedownextra.highlightjs.enabled')): ?>
+	<script>hljs.initHighlightingOnLoad();</script>
+<?php endif; ?>

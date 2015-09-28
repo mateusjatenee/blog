@@ -2,6 +2,9 @@
     <?php echo e($post->title); ?>
 
 <?php $__env->stopSection(); ?>
+<?php $__env->startSection('additional_head'); ?>
+<?php echo $__env->make('parsedownextra::highlightjs-stylesheet', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
     <!-- Post Content -->
@@ -15,6 +18,11 @@
             </div>
         </div>
     </article>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('additional_scripts'); ?>
+<?php echo $__env->make('parsedownextra::highlightjs-script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('parsedownextra::highlightjs-init', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('blog.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

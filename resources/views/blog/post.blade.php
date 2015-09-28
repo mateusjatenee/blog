@@ -2,6 +2,9 @@
     @section('title')
     {{ $post->title }}
 @stop
+@section('additional_head')
+@include('parsedownextra::highlightjs-stylesheet')
+@stop
 
 @section('content')
     <!-- Post Content -->
@@ -14,4 +17,9 @@
             </div>
         </div>
     </article>
+@stop
+
+@section('additional_scripts')
+@include('parsedownextra::highlightjs-script')
+@include('parsedownextra::highlightjs-init')
 @stop

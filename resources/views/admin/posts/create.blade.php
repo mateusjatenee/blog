@@ -24,6 +24,7 @@
                       <label for="exampleInputFile">Foto (opcional)</label>
                       <input type="file" id="exampleInputFile" name="image">
                     </div>
+                    <div class="form-group"><label>Data de publicacao</label><input type="text" class="form-control input-lg" placeholder="Data" name="date" value="{{ Carbon\Carbon::today()->format('Y-m-d') }}"></div>
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">

@@ -9,15 +9,13 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $last_post = Post::find(1);
         $posts = Post::with('user')->paginate(10);
-        return view('blog.index', compact('last_post', 'posts'));
+        return view('blog.index', compact('posts'));
     }
 
     public function post($slug)
     {
-        $post = Post::where('slug', $slug)->get();
-        dd($post);
+        $post = Post::where('slug', $slug)->first();
         return view('blog.post', compact('post'));
     }
 

@@ -20,7 +20,7 @@
                     </a>
                     <p class="post-meta"><?php echo e($post->user->name); ?> <?php echo e($post->date->diffForHumans()); ?></p>
                     <ul class="pager">
-                        <li class="next"><a href="<?php echo route('blog.post', [$post->slug]); ?>" style="background: #0085a1; border: 1px solid #0085a1; color: #fff">Ver mais</a>
+                        <li class="previous"><a href="<?php echo route('blog.post', [$post->slug]); ?>" style="background: #0085a1; border: 1px solid #0085a1; color: #fff">Ver mais</a>
 </li>
                     </ul>
                 </div>

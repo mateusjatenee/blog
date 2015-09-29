@@ -19,13 +19,17 @@
                         </h3>
                     </a>
                     <p class="post-meta">{{ $post->user->name }} {{ $post->date->diffForHumans() }}</p>
+                    <ul class="pager">
+                        <li class="previous"><a href="{!! route('blog.post', [$post->slug]) !!}" style="background: #0085a1; border: 1px solid #0085a1; color: #fff">Ver mais</a>
+</li>
+                    </ul>
                 </div>
             @endforeach
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     @if($posts->previousPageUrl())
-                    <li class="next">
+                    <li class="previous">
                         <a href="#">Voltar</a>
                     </li>
                     @endif

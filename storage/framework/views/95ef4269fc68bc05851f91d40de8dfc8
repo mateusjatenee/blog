@@ -18,14 +18,18 @@
 
                         </h3>
                     </a>
-                    <p class="post-meta"><?php echo e($post->user->name); ?> em <?php echo e($post->created_at->format('d/m/Y')); ?></p>
+                    <p class="post-meta"><?php echo e($post->user->name); ?> <?php echo e($post->date->diffForHumans()); ?></p>
+                    <ul class="pager">
+                        <li class="next"><a href="<?php echo route('blog.post', [$post->slug]); ?>" style="background: #0085a1; border: 1px solid #0085a1; color: #fff">Ver mais</a>
+</li>
+                    </ul>
                 </div>
             <?php endforeach; ?>
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     <?php if($posts->previousPageUrl()): ?>
-                    <li class="next">
+                    <li class="previous">
                         <a href="#">Voltar</a>
                     </li>
                     <?php endif; ?>

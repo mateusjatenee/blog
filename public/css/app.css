@@ -6529,4 +6529,7 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1; }
 
+pre {
+  background: #232323; }
+
 /*# sourceMappingURL=app.css.map */

@@ -73,7 +73,7 @@ return [
              * See all available styles at https://github.com/isagalaev/highlight.js/tree/master/src/styles
              * Live demo at https://highlightjs.org/static/demo/
              */
-            'style' => 'default',
+            'style' => 'railscasts',
 
             /**
              * CDN Service

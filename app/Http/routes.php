@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('blog.index');
 });
 $router->get('auth/login', 'Auth\AuthController@getLogin')->name('login.get');
 $router->post('auth/login', 'Auth\AuthController@postLogin')->name('login.post');

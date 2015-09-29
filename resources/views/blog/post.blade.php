@@ -13,6 +13,11 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     {!! Markdown::parse($post->content) !!}
+                    <hr>
+                    <a href="http://twitter.com/home?status={{ $post->title }} por @mateusjatenee - {{ route('blog.post', [$post->slug]) }}" title="Clique para compartilhar no twitter">Compartilhar no <i class="fa fa-twitter fa-2x"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?u={{ route('blog.post', [$post->slug]) }}"> ou no <i class="fa fa-facebook fa-2x"></i></a>
+
+
                 </div>
             </div>
         </div>

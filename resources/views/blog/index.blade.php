@@ -18,7 +18,7 @@
                             {!! Illuminate\Support\Str::limit(Markdown::parse($post->content), 20) !!}
                         </h3>
                     </a>
-                    <p class="post-meta">{{ $post->user->name }} em {{ $post->created_at->format('d/m/Y') }}</p>
+                    <p class="post-meta">{{ $post->user->name }} em {{ $post->date->format('d/m/Y') }}</p>
                 </div>
             @endforeach
                 <hr>

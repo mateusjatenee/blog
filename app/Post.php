@@ -14,6 +14,7 @@ class Post extends Model implements SluggableInterface
         'build_from' => 'title',
         'save_to' => 'slug',
     ];
+    protected $dates = ['date'];
     protected $fillable = ['title', 'content', 'date', 'image_url'];
 
     public function user()

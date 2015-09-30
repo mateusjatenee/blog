@@ -1,3 +1,4 @@
+<?php $post = app('App\Post'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +7,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Mateus is a web developer and software developer at Weenside.">
+    <meta name="author" content="Mateus Guimarães">
 
     <title>Mateus Guimarães - <?php echo $__env->yieldContent('title'); ?></title>
 
@@ -48,7 +49,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="<?php echo route('blog.post', [App\Post::latest()->first()->slug]); ?>"><?php echo e(App\Post::latest()->first()->title); ?></a>
+                        <a href="<?php echo route('blog.post', [$post->latest()->first()->slug]); ?>"><?php echo e($post->latest()->first()->title); ?></a>
                     </li>
                     <li>
                         <a href="<?php echo route('blog.index'); ?>">Início</a>

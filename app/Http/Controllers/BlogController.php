@@ -16,7 +16,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $posts = $this->post->with('user')->paginate(10);
+        $posts = $this->post->with('user')->latest()->paginate(10);
         return view('blog.index', compact('posts'));
     }
 

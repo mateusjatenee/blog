@@ -14,13 +14,13 @@ class BlogController extends Controller
 
     public function index()
     {
-        $posts = Post::with('user')->paginate(10);
+        $posts = $this->post->with('user')->paginate(10);
         return view('blog.index', compact('posts'));
     }
 
     public function post($slug)
     {
-        $post = Post::where('slug', $slug)->first();
+        $post = $this->post->where('slug', $slug)->first();
         if (!$post) {
             abort(404);
         }

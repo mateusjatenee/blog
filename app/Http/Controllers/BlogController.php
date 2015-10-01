@@ -7,6 +7,11 @@ use App\Post;
 
 class BlogController extends Controller
 {
+    public function __construct(Post $post)
+    {
+        $this->post = $post;
+    }
+
     public function index()
     {
         $posts = Post::with('user')->paginate(10);

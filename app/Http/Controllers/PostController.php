@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostStoreRequest;
 use App\Post;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    public function __construct(Guard $auth, Post $post)
+    {
+        $this->auth = $auth;
+        $this->post = $post;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(20);
+        $posts = $this->post->paginate(20);
         return view('admin.posts.index', compact('posts'));
     }
 
@@ -39,7 +44,7 @@ class PostController extends Controller
      */
     public function store(PostStoreRequest $request)
     {
-        $post = Auth::user()->posts()->create([
+        $post = $this->auth->user()->posts()->create([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'date' => $request->input('date'),
@@ -89,7 +94,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post_destroy = Post::find($id)->destroy();
+        $post_destroy = $this->post->find($id)->destroy();
         return redirect()->route('admin.posts.index');
     }
 }

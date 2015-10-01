@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    protected $auth;
+    protected $post;
+
     public function __construct(Guard $auth, Post $post)
     {
         $this->auth = $auth;

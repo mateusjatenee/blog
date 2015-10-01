@@ -7,6 +7,8 @@ use App\Post;
 
 class BlogController extends Controller
 {
+    protected $post;
+
     public function __construct(Post $post)
     {
         $this->post = $post;

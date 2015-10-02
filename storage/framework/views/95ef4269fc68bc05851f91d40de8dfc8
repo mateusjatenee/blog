@@ -14,7 +14,7 @@
                         </h2>
                     </a>
                         <h3 class="post-subtitle">
-                            <?php echo Illuminate\Support\Str::limit(Markdown::parse($post->content), 20); ?>
+                            <?php echo Illuminate\Support\Str::limit(Markdown::parse($post->content), 40); ?>
 
                         </h3>
                     </a>

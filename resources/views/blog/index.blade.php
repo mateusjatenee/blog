@@ -15,7 +15,7 @@
                         </h2>
                     </a>
                         <h3 class="post-subtitle">
-                            {!! Illuminate\Support\Str::limit(Markdown::parse($post->content), 20) !!}
+                            {!! Illuminate\Support\Str::limit(Markdown::parse($post->content), 40) !!}
                         </h3>
                     </a>
                     <p class="post-meta">{{ $post->user->name }} {{ $post->date->diffForHumans() }}</p>

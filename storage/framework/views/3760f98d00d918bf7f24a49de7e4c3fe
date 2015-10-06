@@ -1,4 +1,4 @@
-<?php $post = app('App\Post'); ?>
+<?php $post_latest = app('App\Post'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="<?php echo route('blog.post', [$post->latest()->first()->slug]); ?>"><?php echo e($post->latest()->first()->title); ?></a>
+                        <a href="<?php echo route('blog.post', [$post->latest()->first()->slug]); ?>"><?php echo e($post_latest->latest()->first()->title); ?></a>
                     </li>
                     <li>
                         <a href="<?php echo route('blog.index'); ?>">Início</a>
@@ -138,6 +138,16 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58933598-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
     <?php echo $__env->yieldContent('additional_scripts'); ?>
 </body>
 

@@ -1,4 +1,4 @@
-@inject('post', 'App\Post')
+@inject('post_latest', 'App\Post')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{!! route('blog.post', [$post->latest()->first()->slug]) !!}">{{ $post->latest()->first()->title }}</a>
+                        <a href="{!! route('blog.post', [$post->latest()->first()->slug]) !!}">{{ $post_latest->latest()->first()->title }}</a>
                     </li>
                     <li>
                         <a href="{!! route('blog.index') !!}">Início</a>
